@@ -11,6 +11,18 @@ public class Editor2 {
 
 	public static void main (String[] args){
 		//// Replace this comment with your code.
-		//// This function is similar to the main function of Editor1.java			
+		//// This function is similar to the main function of Editor1.java	
+			String fileName = args[0];
+			int Width = Integer.parseInt(args[1]);
+			int Height = Integer.parseInt(args[2]);
+			// Reads the input image and creates an empty output image
+			Color[][] imageIn = Runigram.read(fileName);	
+			Color[][] imageOut = Runigram.scaled(imageIn, Width, Height);	
+			
+			Runigram.setCanvas(imageIn);
+			Runigram.display(imageIn);
+			StdDraw.pause(3000); 
+			Runigram.display(imageOut);							
+				
 	}
 }
