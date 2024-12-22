@@ -40,8 +40,8 @@ public class Runigram {
 		// creates from the 3 colors a new Color object, and 
 		// makes pixel (i,j) refer to that object.
 		//// Replace the following statement with your code.
-		for (int i = 0 ; i < numCols ; i ++){
-			for (int j = 0; j < numRows; j++) {
+		for (int i = 0 ; i < numRows ; i ++){
+			for (int j = 0; j < numCols; j++) {
 				int r = in.readInt(); 
 				int g = in.readInt();
 				int b = in.readInt();
@@ -111,8 +111,12 @@ public class Runigram {
 	// the three values r = lum, g = lum, b = lum.
 	private static Color luminance(Color pixel) {
 		//// Replace the following statement with your code
+		int r = pixel.getRed();
+		int g = pixel.getGreen();
+		int b = pixel.getBlue();
 		
-		int lum = (int)(pixel.getRed() * 0.299 + pixel.getGreen() + 0.587 + pixel.getBlue() * 0.114);
+		int lum = (int) (0.299 * r + 0.587 * g + 0.114 * b);
+		
 		
 		return new Color(lum, lum, lum);
 	}
